@@ -63,14 +63,12 @@ export default class View {
   createListItem(item) {
     const { webformatURL, largeImageURL, tags } = item;
     const li = this.createDOMElement('li', 'img-list__item');
-    const a = this.createDOMElement('a', null, { href: largeImageURL });
     const img = this.createDOMElement('img', 'img-list__image', {
       src: webformatURL,
       'data-source': largeImageURL,
       alt: tags,
     });
 
-    a.appendChild(img);
     li.appendChild(img);
 
     li.addEventListener('click', this.onItemClick.bind(this))
