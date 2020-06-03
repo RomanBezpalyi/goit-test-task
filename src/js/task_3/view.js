@@ -48,11 +48,6 @@ export default class View {
       .catch((e) => console.error(e));
   }
 
-  setOffset(offset, ...args) {
-    console.log('triggered');
-    return getImages.bind(...args, offset);
-  }
-
   createDOMElement(tag, className, attributes) {
     const element = document.createElement(tag);
     if (className) element.classList.add(className);
